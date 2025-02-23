@@ -8,6 +8,11 @@ let name = "Kanchan";
 let age = 27;
 let isLoggedIn = true;
 let state;
+const id = Symbol('123');
+const anotherId = Symbol('123');
+console.log(id === anotherId); // o/p: false
+const bigNumber = 234568985433567898n; // example of bigInt
+console.log(typeof bigNumber); // bigint
 
 //Primitive data types
 //number => 2^53
@@ -22,3 +27,27 @@ let state;
 
 console.log(typeof(null)); // o/p: object
 console.log(typeof(undefined)); // o/p: undefined
+
+/*
+JS is dynamically typed language
+there are 2 types of data based on how it is stored in memory and how it is accessed
+1. primitive - call by value
+String, number, boolean, null, undefined, symbol, bigInt
+2. non-primitive or reference - call by reference
+Array, Objects, Functions
+*/
+
+const heros = ["shaktiman", "naagraj"];
+
+let myObj = {
+    name: "Kanchan",
+    age: 27,
+};
+
+const myFunction = function(){
+    console.log("hello world!");
+}
+
+console.log(typeof (myFunction)); // o/p: function
+console.log(typeof (myObj)); // o/p: object
+console.log(typeof (heros)); // o/p: object
