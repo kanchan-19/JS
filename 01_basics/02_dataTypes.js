@@ -51,3 +51,17 @@ const myFunction = function(){
 console.log(typeof (myFunction)); // o/p: function
 console.log(typeof (myObj)); // o/p: object
 console.log(typeof (heros)); // o/p: object
+
+/* ******************* Stack and Heap memory ******************** */
+
+//Primitive data types are stored in stack memory and non-primitive data type is stored in heap memory.
+
+let userOne = {
+    email: "abc@orkut.com",
+    upi: "123@ybl",
+};
+
+let userTwo = userOne;
+userTwo.email = "kk@google.com";
+console.log(userOne.email);
+console.log(userTwo.email);
