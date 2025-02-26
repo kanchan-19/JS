@@ -23,4 +23,4 @@ console.log(anotherString); // o/p: KK-
 
 console.log(gameName.includes('KK')); // o/p: true
 
-console.log(gameName.split("-"));
+console.log(gameName.split("-")); // o/p: [ 'KK', 'hc' ]

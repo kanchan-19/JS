@@ -16,7 +16,7 @@ console.log(hundreds.toLocaleString('en-IN')); // o/p: 10,00,000 => It converts 
 // ************************************Maths**********************************
 
 console.log(Math); // o/p: Object [Math] {}
-console.log(Math.abs(-4)); // o/p: 4 => Thisfunction converts -ve value to +ve
+console.log(Math.abs(-4)); // o/p: 4 => This function converts -ve value to +ve
 console.log(Math.round(4.5)); // o/p: 5
 console.log(Math.ceil(4.2)); // o/p: 5
 console.log(Math.floor(4.9)); // o/p: 4

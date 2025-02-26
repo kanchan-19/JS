@@ -1,10 +1,10 @@
 let score = "57abc";
 
-console.log(typeof(score));
+console.log(typeof(score)); // o/p: string
 
 let valueInNumber = Number(score);
-console.log(typeof(valueInNumber));
-console.log(valueInNumber);
+console.log(typeof(valueInNumber)); // o/p: number
+console.log(valueInNumber); // o/p: NaN
 
 //"33" => 33
 //"33abc" => NaN
@@ -52,7 +52,9 @@ console.log(1 + 2 + "2"); // o/p: 32
 /*
 console.log(true); //o/p: true
 console.log(+true); //o/p: 1
-console.log(true+); o/p: console
+console.log(true+); // o/p: console.log(true+);
+                                             ^                                            
+SyntaxError: Unexpected token ')'
 console.log(+""); //o/p: 0
 */
 
@@ -62,4 +64,4 @@ num1 = num2 = num3 = 2+2; // this is not a good practice
 
 let gameCounter = 100;
 gameCounter++;
-console.log(gameCounter);
+console.log(gameCounter); // o/p: 101

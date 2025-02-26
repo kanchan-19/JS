@@ -15,7 +15,7 @@ const bigNumber = 234568985433567898n; // example of bigInt
 console.log(typeof bigNumber); // bigint
 
 //Primitive data types
-//number => 2^53
+//number => range: 2^53
 //bigint
 //string
 //boolean
@@ -48,7 +48,7 @@ const myFunction = function(){
     console.log("hello world!");
 }
 
-console.log(typeof (myFunction)); // o/p: function
+console.log(typeof (myFunction)); // o/p: function => its type is also called function object
 console.log(typeof (myObj)); // o/p: object
 console.log(typeof (heros)); // o/p: object
 
@@ -63,5 +63,5 @@ let userOne = {
 
 let userTwo = userOne;
 userTwo.email = "kk@google.com";
-console.log(userOne.email);
-console.log(userTwo.email);
+console.log(userOne.email); // o/p: kk@google.com
+console.log(userTwo.email); // o/p: kk@google.com
