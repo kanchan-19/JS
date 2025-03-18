@@ -138,6 +138,58 @@ for(const key in map){
 
 const coding = ["JS", "Java", "Python", "Ruby", "CPP"];
 coding.forEach( function (item){
-    console.log(item);
+    // console.log(item);
 }) // we don't have function name in callback. elements of array comes as parameter of function in callback and we can do the required operation in function body using that element
+
+coding.forEach((val) => {
+    // console.log(val);
+    /* o/p: JS
+Java
+Python
+Ruby
+CPP */
+})
+
+function printMe(item){
+    // console.log(item);
+}
+coding.forEach(printMe); // Here, we only give reference of function. We don't execute function over here.
+/* o/p: JS
+Java
+Python
+Ruby
+CPP */
+
+coding.forEach((item, index, arr) => {
+    console.log(item, index, arr);
+    /* o/p: JS 0 [ 'JS', 'Java', 'Python', 'Ruby', 'CPP' ]
+Java 1 [ 'JS', 'Java', 'Python', 'Ruby', 'CPP' ]
+Python 2 [ 'JS', 'Java', 'Python', 'Ruby', 'CPP' ]
+Ruby 3 [ 'JS', 'Java', 'Python', 'Ruby', 'CPP' ]
+CPP 4 [ 'JS', 'Java', 'Python', 'Ruby', 'CPP' ] */
+})
+
+const myCoding = [
+    {
+        languageName : "JS",
+        languageFileName : "JavaScript",
+    },
+    {
+        languageName : "Java",
+        languageFileName : "Java",
+    },
+    {
+        languageName : "py",
+        languageFileName : "Python",
+    },
+];
+
+myCoding.forEach((item) => {
+    // console.log(item.languageName); 
+    /* o/p: JS
+Java
+py */
+})
+
+
 
