@@ -23,22 +23,25 @@ const map = new Map();
 map.set('IN', "India");
 map.set('USA', "United States of America");
 map.set('Fr', "France");
-console.log(map); /* o/p: Map(3) {
+// console.log(map); 
+/* o/p: Map(3) {
     'IN' => 'India',
     'USA' => 'United States of America',
     'Fr' => 'France'
   }
 */
 
-map.set('IN', "India");
-console.log(map);/* o/p: Map(3) {
+map.set('IN', "India"); // Here, we are trying to check if map takes duplicate value or not
+// console.log(map);
+/* o/p: Map(3) {
     'IN' => 'India',
     'USA' => 'United States of America',
     'Fr' => 'France'
   }
 */
 map.set('IN', "Bharat");
-console.log(map);/* o/p: Map(3) {
+// console.log(map);
+/* o/p: Map(3) {
     'IN' => 'Bharat',
     'USA' => 'United States of America',
     'Fr' => 'France'
@@ -46,14 +49,16 @@ console.log(map);/* o/p: Map(3) {
 */
 
 for(const key of map){
-    console.log(key); /* o/p: [ 'IN', 'Bharat' ]
+    // console.log(key); 
+    /* o/p: [ 'IN', 'Bharat' ]
     [ 'USA', 'United States of America' ]
     [ 'Fr', 'France' ]
 */
 }
 
 for(const [key, value] of map){
-    console.log(key+ ':-'+ value); /* o/p: IN :- Bharat
+    // console.log(key+ ':-'+ value); 
+    /* o/p: IN :- Bharat
     USA :- United States of America
     Fr :- France
 */
