@@ -68,4 +68,24 @@ userBooks = books.filter((book) => book.publish >= 1995 && book.genre === 'Histo
 // console.log(userBooks);
 
 const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+newNums = myNumbers.map((num) => num+10); // map iterate over every value unlike filter
+// console.log(newNums); 
+/* o/p: [
+    11, 12, 13, 14, 15,
+    16, 17, 18, 19, 20
+  ] 
+*/
 
+newNums = myNumbers.map((num) => num*10).map((num) => num+1); // It's chaining. In chaining, output of one chain will be taken as input in another chain. e.g. - 2nd map will take values which is already multiplied by 10 in 1st map as input and then will perform operation on it.
+// console.log(newNums);
+/* o/p: [
+  11, 21, 31, 41,  51,
+  61, 71, 81, 91, 101
+]*/
+
+newNums = myNumbers.map((num) => num*10).map((num) => num+1).filter((num) => num >= 40);
+console.log(newNums);
+/* o/p: [
+  41, 51,  61, 71,
+  81, 91, 101
+] */
