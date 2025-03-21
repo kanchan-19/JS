@@ -1,13 +1,95 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+<!-- it denotes that , it's HTML5 -->
 <html lang = "en">
     <head>
         <meta charset = "UTF-8">
         <title>Learning DOM</title>
+        <style>
+            .container{
+                background-color: #212121;
+                color: white;
+            }
+        </style>
     </head>
     <body>
         <div class = "container">
-            <h1 class = "heading">Learning JS</h1>
+            <h1 id = "title" class = "heading">Learning JS<span style = "display:none;">text text</span></h1>
+            <h2>Lorem, ipsum dolor.</h2>
+            <h2>Lorem, ipsum dolor.</h2>
+            <h2>Lorem, ipsum dolor.</h2>
             <p>Lorem ipsum dolor sit amet.</p>
+            <input type = "password" placeholder = "Enter password">
+            <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
         </div>
     </body>
 </html>
+
+<!-- document.getElementById("title");
+ o/p: <h1 id=​"title" class=​"heading">​Learning JS​</h1>​
+document.getElementById("title").id;
+ o/p: 'title'
+document.getElementById("title").className;
+ o/p: 'heading'
+document.getElementById("title").getAttribute("id");
+ o/p: 'title' 
+document.getElementById("title").getAttribute("class");
+ o/p: 'heading'
+document.getElementById("title").setAttribute('class', 'test heading'); => It will alter the class attribute and will rename it to test heading. we can see the real time output in Elements tab
+const title = document.getElementById("title");
+undefined
+title
+ o/p: <h1 id=​"title" class=​"test heading">​Learning JS​</h1>​
+title.style.backgroundColor = 'purple';
+ o/p: 'purple'
+title.style.padding = "15px";
+ o/p: '15px'
+title.style.borderRadius = "15px";
+ o/p: '15px'
+title.textContent;
+ o/p: 'Learning JS'
+title.innerHTML
+ o/p: 'Learning JS'
+title.innerText;
+ o/p: 'Learning JS'
+Now, we are making changes in line no. 16 by adding <span>text text</span> to check the difference b/w innerText and textContent
+title.innerText;
+ o/p: 'Learning JStext text'
+title.textContent;
+ o/p: 'Learning JStext text'
+Again, we are making changes in line no. 16 in span tag by adding style as we can't understand the difference yet
+title.innerText;
+ o/p: 'Learning JS'
+title.textContent;
+'Learning JStext text'
+Now, we can understand that innerText only gives visible text as value while textContent shows hidden content as well.
+title.innerHTML;
+ o/p: 'Learning JS<span style="display:none;">text text</span>'
+document.getElementsByClassName("heading");
+ o/p: HTMLCollection [h1#title.heading, title: h1#title.heading]
+document.querySelector('h2'); => it gives the first h2
+ o/p: <h2>Lorem, ipsum dolor.</h2>
+document.querySelector('#title');
+ o/p: <h1 id=​"title" class=​"heading">​…​</h1>​
+document.querySelector('.heading');
+ o/p: <h1 id=​"title" class=​"heading">​…​</h1>​
+document.querySelector('input[type="password"]');
+ o/p: <input type=​"password" placeholder=​"Enter password">​
+const myUl = document.querySelector('ul');
+undefined
+myUl;
+ o/p: <ul>​…​</ul>​
+const turnGreen = myUl.querySelector('li');
+undefined
+turnGreen;
+ o/p: <li>​…​</li>​::marker​"one"</li>​
+turnGreen.style.backgroundColor = "green";
+ o/p: 'green'
+turnGreen.innerText;
+ o/p: 'one'
+turnGreen.innerText = "five"; => it changes the innerText of first list from one to five
+ o/p: 'five'
+ -->
