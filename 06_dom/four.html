@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <title>DOM Part 4</title>
+        <style>
+            body{
+                background-color: #212121;
+                color: white;
+            }
+        </style>
+        <body>
+            <ul class = "language">
+                <li>JavaScript</li>
+            </ul>
+        </body>
+        <script>
+            function addLanguage(langName){
+                const li = document.createElement('li');
+                li.innerHTML = `${langName}`;
+                document.querySelector('.language').appendChild(li);
+            }
+            addLanguage('Java');
+
+            function addOptiLanguage(langName){
+                const li = document.createElement('li');
+                li.appendChild(document.createTextNode(langName));
+                document.querySelector('.language').appendChild(li);
+            }
+            addOptiLanguage('Python');
+        </script>
+    </head>
+</html>
