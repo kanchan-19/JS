@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
     <head>
-        <meta chrset = "UTF-8">
+        <meta charset = "UTF-8">
         <title>DOM Part 3</title>
         <style>
             body{
@@ -18,13 +18,13 @@
         console.log(div);
         div.className = "main";
         div.id = Math.round(Math.random()*10+1);
-        div.setAttribute("title", "generated title");
+        div.setAttribute("title", "generated title"); // Attributes are set in key value pair.
         div.style.backgroundColor = "purple";
         div.style.paddig = "15px";
         // div.innerText = "Learning DOM";
         // untill now div element is in memory only.
-        // innerText, id, className, these things first access the div's refrence then overwrite the value while setAttribute() direct set the values without bringing the div
-        const addText = document.createTextNode("Learning DOM"); // Here, we are using Text Node instead of inner HTMl
+        // innerText, id, className, these things first access the div's refrence then overwrite the value while setAttribute() directly set the values without bringing the div
+        const addText = document.createTextNode("Learning DOM"); // Here, we are using Text Node instead of inner HTMl to add div content
         div.appendChild(addText);
         document.body.appendChild(div);
     </script>
