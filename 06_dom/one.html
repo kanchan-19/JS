@@ -20,9 +20,10 @@
             <p>Lorem ipsum dolor sit amet.</p>
             <input type = "password" placeholder = "Enter password">
             <ul>
-                <li>one</li>
-                <li>two</li>
-                <li>three</li>
+                <li class = "list-item">one</li>
+                <li class = "list-item">two</li>
+                <li class = "list-item">three</li>
+                <li class = "list-item">four</li>
             </ul>
         </div>
     </body>
@@ -92,4 +93,34 @@ turnGreen.innerText;
  o/p: 'one'
 turnGreen.innerText = "five"; => it changes the innerText of first list from one to five
  o/p: 'five'
+//Node List and HTML Collection are not pure array
+const tempLiList = document.querySelectorAll('li');
+ o/p: undefined
+tempLiList;
+ o/p: NodeList(3) [li, li, li]
+tempLiList.style.color = "green";
+ o/p: VM322:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color') -> this error is coming as its node list not array
+tempLiList[0].style.color = "green";
+ o/p: 'green'
+const myH1 = document.querySelectorAll('h1');
+ o/p: undefined
+myH1;
+ o/p: NodeList [h1#title.heading]
+myH1[0].style.color = "cyan";
+ o/p: 'cyan'
+tempLiList.forEach(function(l) {
+   l.style.backgroundColor = "white";
+});
+// Node List can be converted to array if required
+document.getElementsByClassName('list-item');
+ o/p: HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+// HTML Collection don't contain forEach method for looping. That's why we need to convert it to array if looping is required.
+const tempClassList = document.getElementsByClassName('list-item');
+ o/p: undefined
+Array.from(tempClassList);
+ o/p: (4) [li.list-item, li.list-item, li.list-item, li.list-item] -> Here, we can see that HTML Collection has been converted to array.
+const myConvertedArray = Array.from(tempClassList);
+myConvertedArray.forEach(function(li) {
+    li.style.color = 'orange';
+}); -> it will conver the list color to orange
  -->
