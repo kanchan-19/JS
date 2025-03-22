@@ -20,7 +20,7 @@
     </body>
     <script>
         const parent = document.querySelector('.parent');
-        // console.log(parent);
+        // console.log(parent); // o/p: <div class="parent">…</div>
         // console.log(parent.children); // o/p: HTMLCollection(4) [div.day, div.day, div.day, div.day]
         // console.log(parent.children[1].innerHTML); // o/p: Tuesday
 
@@ -34,7 +34,7 @@
 
         parent.children[1].style.color = "orange";
         // console.log(parent.firstElementChild); // o/p: <div class=​"day">Monday​</div>​
-        // console.log(parent.lastElementChild); // o/p: div class=​"day">​Thursday​</div>​
+        // console.log(parent.lastElementChild); // o/p: <div class=​"day">​Thursday​</div>​
         const dayOne = document.querySelector('.day');
         // console.log(dayOne); // o/p: <div class=​"day">Monday​</div>​
         // console.log(dayOne.parentElement); // o/p: <div class="parent">…</div>
