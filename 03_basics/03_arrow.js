@@ -7,9 +7,23 @@ const user  = {
     },
 };
 
-user.welcomeMessage(); // o/p: Kanchan, welcome to github
+user.welcomeMessage(); 
+/* o/p: Kanchan, welcome to github
+{
+  username: 'Kanchan',
+  price: 999,
+  welcomeMessage: [Function: welcomeMessage]
+}
+*/
 user.username = "Sam";
-user.welcomeMessage(); // o/p: Sam, welcome to github
+user.welcomeMessage(); 
+/* o/p: Sam, welcome to github
+{
+  username: 'Sam',
+  price: 999,
+  welcomeMessage: [Function: welcomeMessage]
+}
+*/
 
 console.log(this); // o/p: {}
 
@@ -20,7 +34,7 @@ function cake(){
     console.log(this);
 }
 
-cake(); // o/p: we get many values as output
+cake(); // o/p: undefined
 */
 
 function cake(){
