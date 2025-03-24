@@ -1,4 +1,4 @@
-// window is a complex objecy
+// window is a complex object
 
 // console.dir(document); // It doesn't work in node environment but it works on browser. In browser, this is used to get all the properties and methods of document
 
