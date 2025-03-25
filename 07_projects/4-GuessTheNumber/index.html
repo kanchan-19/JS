@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    <title>Guess the Number</title>
+    <link rel = "stylesheet" href = "index.css">
+  </head>
+  <body>
+    <nav>
+      <a href = "#" target = "_blank">Home</a>
+      <a href = "#" target = "_blank">Youtube channel</a>
+    </nav>
+    <hr>
+    <main>
+      <header>Number guessing game</header>
+      <section>
+        <p>Try and guess a number between 1 and 100.</p>
+        <p>You have 10 attempts to guess the right number.</p>
+      </section>
+      <form>
+        <label>Guess a number</label>
+        <br>
+        <input type = text id = "number">
+        <br>
+        <button id = "submit">Submit guess</button>
+      </form>
+      <div id = "guess-summary">
+        <p>Previous Guesses: </p>
+        <span id = "prev-guess"></span>
+        <p>Guesses Remaining: </p>
+        <span id = "remaining-guess"></span>
+      </div>
+    </main>
+    <script src = "script.js"></script>
+  </body>
+</html>
