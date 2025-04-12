@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    <title>Events</title>
+    <link rel = "stylesheet" href = "one.css">
+  </head>
+  <body>
+    <h2>Amazing Image</h2>
+    <div>
+      <ul id = "image">
+        <li><img src = "https://images.pexels.com/photos/31088732/pexels-photo-31088732/free-photo-of-delicious-nachos-with-guacamole-topping.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt = "nachos" id = "nachos"></li>
+        <li><img src = "https://images.pexels.com/photos/14505805/pexels-photo-14505805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt = "droplet" id = "droplet"></li>
+        <li><img src = "https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt = "bread with curry" id = "bread-with-curry"></li>
+        <li><img src = "https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt = "sliced fruits" id = "sliced-fruits"></li>
+        <li><img src = "https://images.pexels.com/photos/2802527/pexels-photo-2802527.jpeg?auto=compress&cs=tinysrgb&w=600" alt = spices></li>
+        <li><a href = "https://google.com" id = "google">Google</a></li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // JS is sequentially run language. However, Javascript runtime environment can be made async.
+    // Browser events are invoked when some activity is performed
+
+    /*document.getElementById("nachos").onclick = function(){
+      alert('nachos selected');
+    }; =>this approach is not good as it gives us less features. We should use event listeners because it not only give us onclick but propagation capability as well.
+    */
+
+    // third parameter of event listener is false by default. 
+    
+    document.getElementById('nachos').addEventListener('click', function(event){
+      console.log(event);
+    }, false);
+
+    //type, timestamp, defaultPrevented - to change default behaviour of any tag
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, scrrenX, screenY - interview related
+    //altkey, ctrlkey, shiftkey, keyCode
+
+    //attachEvent() => It was used earlier when there was war for Internet Explorer. It is not used now a days.
+    //jQuery - on - jQuery is a framework in which we have on event listener
+
+    // There are 2 contexts of event propagation. 1. Event Bubbling 2. Event Capturing
+    // When 3rd parameter of event listener is false , then it is known as event bubbling.
+
+    /*document.getElementById('image').addEventListener('click', function(event){
+      console.log("clicked inside the ul.");
+    }, false);
+    document.getElementById('sliced-fruits').addEventListener('click', function(event){
+      console.log("sliced fruits clicked.");
+    }, false);
+    */
+
+    // In event bubbling, events are executed from down to up or from inside to outside. On the contrary, in event capturing, events are executed from up to down or from outside to inside.
+
+    /*document.getElementById('image').addEventListener('click', function(event){
+      console.log("clicked inside the ul.");
+    }, true);
+    document.getElementById('sliced-fruits').addEventListener('click', function(event){
+      console.log("sliced fruits clicked.");
+    }, true);
+    */
+
+    // To stop event bubbling, we can use event.stopPropagation()
+
+    document.getElementById('image').addEventListener('click', function(event){
+      console.log('clicked inside the ul.');
+    });
+    document.getElementById('sliced-fruits').addEventListener('click', function(event){
+      console.log("sliced fruits clicked.");
+      event.stopPropagation();
+    });
+
+    document.getElementById('google').addEventListener('click', function(event){
+      event.preventDefault();
+      console.log('google is clicked');
+    });
+
+
+    document.querySelector('#image').addEventListener('click', function(event){
+      console.log(event.target.parentNode);
+      console.log(event.target.tagName);
+      if(event.target.tagName === 'IMG'){
+        let removeIt = event.target.parentNode;
+        removeIt.remove();
+      }
+      // removeIt.parentNode.removeChild(removeIt);
+    }) // example of event spillover
+  </script>
+</html>

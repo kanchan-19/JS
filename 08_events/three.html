@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Async</title>
+    <meta charset = "UTF-8">
+  </head>
+  <body>
+    <h1>Chai aur JS</h1>
+    <button id = "start">Start</button>
+    <button id = "stop">Stop</button>
+  </body>
+  <script>
+    const sayDate = function(str){
+      console.log(str, Date.now());
+    };
+    let intervalId = setInterval(sayDate, 1000, "Hi"); // Here, 3rd parameter of setInterval() is getting passed as argument in sayDate().
+    clearInterval(intervalId);
+
+    const start = document.querySelector('#start');
+    const stop = document.querySelector('#stop');
+
+    start.addEventListener('click', function(){
+      intervalId = setInterval(sayDate, 1000, "Kanchan");
+    });
+
+    stop.addEventListener('click', function(){
+      clearInterval(intervalId);
+    })
+  </script>
+</html>

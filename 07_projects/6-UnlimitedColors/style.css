@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+nav{
+  text-align: center;
+}
+
+a{
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 2px;
+  color: black;
+  width: 120px;
+  padding: 5px;
+}
+
+main{
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+
+button{
+  padding: 2px;
+  width: 40px;
+  margin: 2px;
+}

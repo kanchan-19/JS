@@ -4,7 +4,7 @@ const boxes = document.querySelectorAll(".color-box");
 console.log(boxes);
 
 boxes.forEach(function(box){
-mkconsole.log(box);
+  console.log(box);
   box.addEventListener('click', function(event){ // Here, event is an object
     console.log(event);
     console.log(event.target); // it gives us from where event is coming

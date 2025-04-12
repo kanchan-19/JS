@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <title>Events</title>
+    <meta charset = "UTF-8">
+  </head>
+  <body>
+    <h1>Let's learn Async</h1>
+    <button id = "stop">Stop</button>
+  </body>
+  <script>
+    // setTimeout() - this method also calls an API. this is not part of core JS 
+    // handler - it's a callback function with no name
+    setTimeout(function(){
+      console.log("Kanchan");
+    }, 2000); // it will print, Kanchan on console after 2 sec.
+
+    const changeText = function(){
+      document.querySelector('h1').innerHTML = 'Best JS series';
+    }
+    const changeMe = setTimeout(changeText, 2000); // Here, we are giving reference as its handler not executing the function.
+
+    document.querySelector('#stop').addEventListener('click', function(){
+      clearTimeout(changeMe); // It stops the setTimeout() from getting executed if we use it before the time specified in setTimeout().
+      console.log("STOPPED"); // clearTimeout() needs reference of that setTimeout() which it needs to restrict.
+    });
+  </script>
+</html>

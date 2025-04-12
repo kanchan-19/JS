@@ -66,7 +66,7 @@ for(const [key, value] of map){
 
 const myObj = {
     'Game1' : 'NFS',
-    'Game2' : 'JigSaaw',
+    'Game2' : 'JigSaw',
 };
 
 /*for(const [key, value] of myObj){
@@ -139,7 +139,9 @@ for(const key in map){
     // console.log(key); //we don't get any output as map is not iteratable
 }
 
-//for-each loop - it is a property of array in JS
+//for-of loop doesn't work for object and for-in loop doesn't work for map. Map objects are built to be iterated using their own methods (keys(), values(), entries()) or for...of loop, which works with iterable objects. The for-in loop is fundamentally different because it targets enumerable properties in objects, which do not include the contents of a Map.
+
+//forEach loop - it is a property of array in JS
 
 const coding = ["JS", "Java", "Python", "Ruby", "CPP"];
 coding.forEach( function (item){

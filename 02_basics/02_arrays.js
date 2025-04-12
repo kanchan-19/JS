@@ -16,7 +16,7 @@ console.log(newArr2); // o/p: [ 1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5]
 
 console.log(Array.isArray("Kanchan")); // o/p: false
 console.log(Array.from("Kanchan")); // o/p: [ 'K', 'a', 'n', 'c', 'h', 'a', 'n' ] => to convert value into array
-console.log(Array.from({name: "Kanchan"})); // o/p: [] => empty array comes a s output because array is confused whether to create array from key or vaue
+console.log(Array.from({name: "Kanchan"})); // o/p: [] => empty array comes as output because array is confused whether to create array from key or value
 
 let score1 = 100;
 let score2 = 200;

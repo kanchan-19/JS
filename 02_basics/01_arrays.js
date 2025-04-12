@@ -1,6 +1,6 @@
 // Arrays in JavaScript is resizable and it can contain mixed data types unlike java
 
-const myArray = [0, 1, 2, 3, 4,  5];
+const myArray = [0, 1, 2, 3, 4, 5];
 console.log(myArray[0]);
 const myHeros = ["Shaktiman", "Krishna", "Naagraj"];
 const myArr2 = new Array(1, 2, 3, 4);
@@ -12,7 +12,7 @@ myArray.push(7);
 myArray.pop(); // deletes value from the end of the array
 myArray.unshift(9); // adds value at the start of the array
 console.log(myArray);
-myArray.shift(); // delets value from the start of the array
+myArray.shift(); // deletes value from the start of the array
 console.log(myArray);
 console.log(myArray.includes(9));
 console.log(myArray.indexOf(9)); // o/p: -1 => this means that this value is not present in array

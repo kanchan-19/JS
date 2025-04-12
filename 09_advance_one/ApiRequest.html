@@ -1,0 +1,80 @@
+<!-- xml http request - it was used earlier and its legacy. It is interesting and powerful.It is still used in many frameworks. -->
+
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+    <title>API Request and V8 engine</title>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>XMLHttpRequest: readyState property
+    </h2>
+    <table border = "1">
+      <tr>
+        <th>Value</th>
+        <th>State</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>UNSENT</td>
+        <td>client has been created. open() not called yet.</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>OPENED</td>
+        <td>open() has been called.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>HEADERS_RECEIVED</td>
+        <td>	send() has been called, and headers and status are available.</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>LOADING</td>
+        <td>Downloading; responseText holds partial data.</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>DONE</td>
+        <td>The operation is complete.</td>
+      </tr>
+    </table>
+    <div></div>
+  </body>
+  <script>
+    // First we make object using XMLHttpRequest - Its a method in itself which has readySate and all and through this, we can send or receive data request. We can say, XMLHttpRequest is almost a class. So, in order to make its object, we use new keyword.
+    // Opened send the request and it will become available after we have XMLHttpRequest type.
+
+    const xhr = new XMLHttpRequest();
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    xhr.open('GET', requestUrl);
+    console.log(xhr.readyState);
+    // open() takes two parameters. 1st is method which means we want to send which type of request like get, post, put etc. and 2nd parameter is string.
+    // open() doesn't get called by itself. We have to execute send().
+    // to track continously, we need to change the state, using onreadystatechange. onreadystatechange takes a function to know waht needs to be done on state change.
+    xhr.onreadystatechange = function(){
+      console.log(xhr.readyState);
+      if(xhr.readyState === 4){
+        let data = this.responseText; // this is used to refer current context.
+        console.log(typeof data)
+        // Most of the time we get response from url in string format. JSON.parse() converts data in JSON.
+        data = JSON.parse(data);
+        console.log(typeof data);
+        console.log(data.followers); 
+        const image = "https://avatars.githubusercontent.com/u/11613311?v=4";
+        document.querySelector('div').innerHTML = `<img alt = "Hitesh Choudhary" src = ${image}>
+        <p>No. of followers = ${data.followers}</p>`;
+      }
+    }
+    xhr.send();
+    // console and many other API's like document is not part of core JS. console.log() is actually developer's tool. Its injected by JS run-time. Various engines run JS. One of them is V8. Whole V8 engine is written in C++. JS is actually a wrapper over C++.
+  </script>
+</html>

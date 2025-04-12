@@ -13,7 +13,7 @@ console.log(typeof(gameName)); // o/p: object
 
 console.log(gameName.__proto__); // o/p: {}
 
-console.log(gameName.length); // length is a function in String java unlike javascript
+console.log(gameName.length); // o/p: 5 => length is a function in String java unlike javascript
 
 const newString = gameName.substring(0, 3);
 console.log(newString); // o/p: KK-
