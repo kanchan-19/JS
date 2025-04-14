@@ -13,8 +13,7 @@
     </style>
   </head>
   <body>
-    <h2>XMLHttpRequest: readyState property
-    </h2>
+    <h2>XMLHttpRequest: readyState property</h2>
     <table border = "1">
       <tr>
         <th>Value</th>
@@ -59,15 +58,15 @@
     console.log(xhr.readyState);
     // open() takes two parameters. 1st is method which means we want to send which type of request like get, post, put etc. and 2nd parameter is string.
     // open() doesn't get called by itself. We have to execute send().
-    // to track continously, we need to change the state, using onreadystatechange. onreadystatechange takes a function to know waht needs to be done on state change.
+    // to track continously, we need to change the state, using onreadystatechange. onreadystatechange takes a function to know what needs to be done on state change.
     xhr.onreadystatechange = function(){
       console.log(xhr.readyState);
       if(xhr.readyState === 4){
         let data = this.responseText; // this is used to refer current context.
-        console.log(typeof data)
+        console.log(typeof data); // string
         // Most of the time we get response from url in string format. JSON.parse() converts data in JSON.
         data = JSON.parse(data);
-        console.log(typeof data);
+        console.log(typeof data); // object
         console.log(data.followers); 
         const image = "https://avatars.githubusercontent.com/u/11613311?v=4";
         document.querySelector('div').innerHTML = `<img alt = "Hitesh Choudhary" src = ${image}>

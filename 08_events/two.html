@@ -18,7 +18,7 @@
     const changeText = function(){
       document.querySelector('h1').innerHTML = 'Best JS series';
     }
-    const changeMe = setTimeout(changeText, 2000); // Here, we are giving reference as its handler not executing the function.
+    const changeMe = setTimeout(changeText, 2000); // Here, we are giving reference as its handler. We are not executing the function over here.
 
     document.querySelector('#stop').addEventListener('click', function(){
       clearTimeout(changeMe); // It stops the setTimeout() from getting executed if we use it before the time specified in setTimeout().

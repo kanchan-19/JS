@@ -86,6 +86,6 @@
         removeIt.remove();
       }
       // removeIt.parentNode.removeChild(removeIt);
-    }) // example of event spillover
+    }) // example of event spillover (If we don't put the check of tagname, and execute statements, let removeIt = event.target.parentNode; removeIt.parentNode.removeChild(removeIt) instead of executing the if block, then the entire unordered list can be deleted by mistake instead of removing that particular list-item if we click on dot(.) instead of image. This is an example of event splillover.)
   </script>
 </html>

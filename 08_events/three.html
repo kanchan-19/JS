@@ -13,7 +13,7 @@
     const sayDate = function(str){
       console.log(str, Date.now());
     };
-    let intervalId = setInterval(sayDate, 1000, "Hi"); // Here, 3rd parameter of setInterval() is getting passed as argument in sayDate().
+    let intervalId = setInterval(sayDate, 1000, "Hi"); // Here, 3rd argument of setInterval() is getting passed as parameter in sayDate().
     clearInterval(intervalId);
 
     const start = document.querySelector('#start');
