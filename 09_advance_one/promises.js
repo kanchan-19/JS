@@ -184,7 +184,3 @@ fetch('http://jsonplaceholder.typicode.com/users').then((response) => response.j
 
 // In o/p, we can see that first we get the o/p of fetch request, then any other block of code's o/p come. This is because, for fetch, a special task queue i.e. Micro Task Queue / Priority Queue / Fetch Queue is made and it is given priority over normal task queue.
 
-// 
-// 
-// 
-// cd ..
