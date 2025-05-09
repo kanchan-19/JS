@@ -18,3 +18,5 @@ Abstraction - hide internal details
 Encapsulation
 Inheritance
 Polymorphism
+
+oop -> object -> prototype -> call -> myClasses -> inheritance -> staticprop -> mathpi -> bind -> getter_setter -> properties_get_set -> object_get_set

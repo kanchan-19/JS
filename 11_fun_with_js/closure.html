@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #313131">
+    <button id = "orange">Orange</button>
+    <button id = "purple">Purple</button>
+    <script>
+      // example of lexical scoping
+      function init() {
+        let name = "Mozilla";
+        function displayName() {
+          console.log(name);
+        }
+        displayName();
+      }
+      init();
+
+
+      // example of closure
+      function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+          console.log(name);
+        }
+        return displayName;
+      }
+
+      const myFunc = makeFunc();
+      myFunc();
+
+      // only display() will not go. If its outer function exists, then it will go as well because of lexical scoping. Memory of outer function is getting shared with inner function not only its execution context.
+
+
+      // practical implementation of above concepts
+      document.getElementById("orange").onclick = function(){ // onclick needs a function
+        document.body.style.backgroundColor = `orange`;
+      }
+      document.getElementById("purple").onclick = function(){
+        document.body.style.backgroundColor = `purple`;
+      }
+
+
+      // function clickHandler(color){
+      //   document.body.style.backgroundColor = `${color}`;
+      // }
+      // document.getElementById('orange').onclick = clickHandler("orange");
+      // document.getElementById('purple').onclick = clickHandler("purple");
+      // we can see that onclick function is getting executed even when we are not clicking any button which we don't want. To resolve this, we will do the following i.e. we will use the concept of lexical scoping and closure.
+
+      function clickHandler(color){
+        return function(){
+          document.body.style.backgroundColor = `${color}`;
+        }
+      }
+      document.getElementById('orange').onclick = clickHandler("orange");
+      document.getElementById('purple').onclick = clickHandler("purple");
+    </script>
+  </body>
+</html>

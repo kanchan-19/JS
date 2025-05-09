@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset = "UTF-8">
+  </head>
+  <body>
+    <button>Button clicked</button>
+  </body>
+  <script>
+    class React{
+      constructor(){
+        this.library = "React";
+        this.server = "https://localhost:300";
+
+        // requirement
+        // document.querySelector('button').addEventListener('click', this.handleClick);
+
+        document.querySelector('button').addEventListener('click', this.handleClick.bind(this));
+      }
+
+      handleClick(){
+        console.log('button clicked');
+        console.log(this.server); // We are getting undefined as o/p. To resolve this problem, we use bind keyword. To show this, we will comment line no. 16 and will write the eventListener with bind keyword in line no. 18 again
+        console.log(this); // We can access this i.e. we are getting button in o/p. This means that we have reference of this keyword.
+      }
+    }
+
+    const app = new React();
+  </script>
+</html>
