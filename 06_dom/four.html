@@ -23,7 +23,7 @@
     }
     addLanguage("Java");
 
-    // below function is more optimized than above one as its using TextNode instead of innerHTML.
+    // below function is more optimized than above one as its using TextNode instead of innerHTML. This is because browser must parse the string as HTML, even if it's just text in case of innerHTML. However, createTextNode explicitly creates a raw text node without parsing.
     function addOptiLanguage(langName) {
       const li = document.createElement("li");
       li.appendChild(document.createTextNode(langName));
