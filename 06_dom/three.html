@@ -20,11 +20,11 @@
         div.id = Math.round(Math.random()*10+1);
         div.setAttribute("title", "generated title"); // Attributes are set in key value pair.
         div.style.backgroundColor = "purple";
-        div.style.paddig = "15px";
+        div.style.padding = "15px";
         // div.innerText = "Learning DOM";
         // untill now div element is in memory only.
-        // innerText, id, className, these things first access the div's refrence then overwrite the value while setAttribute() directly set the values without bringing the div
-        const addText = document.createTextNode("Learning DOM"); // Here, we are using Text Node instead of inner HTMl to add div content
+        // When setting the innerText, id, or className, you must first get a reference to the DOM element and then assign a new value to that property. Similarly, to use setAttribute(), you must have the element reference and then call the method to set the attribute. However, note that some properties (like innerText) do not have a corresponding attribute that can be set with setAttribute(). For standard attributes like 'id' and 'class', both property assignment and setAttribute can be used, but there might be subtle differences in behavior for some cases.
+        const addText = document.createTextNode("Learning DOM"); // Here, we are using Text Node instead of inner HTML to add div content
         div.appendChild(addText);
         document.body.appendChild(div);
     </script>
